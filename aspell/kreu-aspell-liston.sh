@@ -4,8 +4,8 @@
 
 # Aspell ŝajnas estis de 2008 - vidu ftp://ftp.gnu.org/gnu/aspell/dict/eo/
 
-aspell -d eo dump master | 
-	aspell -l eo expand | 
+aspell -d ./aspell/da dump master | 
+#	aspell -l eo expand | 
 	tr ' ' '\n' | 
 	# nur minusklaj
 	# Forprenu unuliterajn vortojn
@@ -15,6 +15,6 @@ aspell -d eo dump master |
 	# permesu senfinaĵajn vortformojn kiel dom'
 	sed -e "s/'//g" |       
 	# neniuj streketoj
-	grep -v "-" |       
+	grep -v '-' | grep -v '\.' |       
 	sort -u
 
