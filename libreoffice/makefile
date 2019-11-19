@@ -10,7 +10,7 @@ dictionaries:
 
 
 libreoffice-listo.txt: dictionaries makefile
-	unmunch dictionaries/da_DK.dic dictionaries/da_DK.aff  | grep -v '|' | grep "^[a-zæøå]" | cut -f1 | sort -u > libreoffice-listo.txt
+	unmunch dictionaries/da_DK.dic dictionaries/da_DK.aff  | grep -v '|' | grep "^[a-zæøå]" | cut -f1 | grep -v '-' | grep -v '\.' | sort -u > libreoffice-listo.txt
 #       unmunch dictionaries/eo.dic eo-skrablo.aff | grep "^[abcĉdefgĝhĥijĵklmnoprsŝtuŭvz]" | grep '½' | cut -d'/' -f1 | sed -e 's/½//g' | sort -u > libreoffice-listo.txt
 #       unmunch eo-aldonoj.dic eo-skrablo.aff | grep "^[abcĉdefgĝhĥijĵklmnoprsŝtuŭvz]" | grep '½' | cut -d'/' -f1 | sed -e 's/½//g' | sort -u > libreoffice-aldonoj.txt
 
